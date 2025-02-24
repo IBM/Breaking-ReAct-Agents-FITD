@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# VS Code settings
+.vscode/
+
+# Data backups
+data_backup/
+
+# Gorilla tools directory
+gorila_tools/
+
+# Exclude all __pycache__ directories recursively
+**/__pycache__/
+
+# Ignore compiled Python files in any directory
+**/*.py[co]
+
+# MacOS specific files
+.DS_Store
+logs/
+
+./results/

@@ -1,0 +1,323 @@
+[{
+    "toolkit": "Calculator",
+    "category": "Mathematics and Utility Tools",
+    "name_for_model": "Calculator",
+    "name_for_human": "Basic Calculator",
+    "description_for_model": "A toolkit for performing basic arithmetic operations including addition, subtraction, multiplication, and division.",
+    "description_for_human": "Toolkit for basic arithmetic calculations.",
+    "tools": [
+    {
+            "name": "Calculate",
+            "summary": "Performs a basic arithmetic calculation.",
+            "parameters": [
+                {
+                    "name": "operation",
+                    "type": "string",
+                    "description": "The arithmetic operation to perform, one of ['addition', 'subtraction', 'multiplication', 'division'].",
+                    "required": true
+                },
+                {
+                    "name": "operands",
+                    "type": "array",
+                    "description": "An array of numbers to perform the operation on. For addition and multiplication, more than two numbers can be provided.",
+                    "required": true
+                }
+            ],
+            "returns": [
+                {
+                    "name": "result",
+                    "type": "number",
+                    "description": "The result of the arithmetic operation."
+                }
+            ],
+            "exceptions": [
+                {
+                    "name": "InvalidOperationException",
+                    "description": "The specified operation is not supported."
+                },
+                {
+                    "name": "DivisionByZeroException",
+                    "description": "An attempt was made to divide by zero."
+                }
+            ]
+        }
+    ]
+},
+
+{
+    "toolkit": "TextProcessor",
+    "category": "Text Analysis and Processing Tools",
+    "name_for_model": "TextProcessor",
+    "name_for_human": "Basic Text Processor",
+    "description_for_model": "A toolkit for performing basic text analysis including word count, character count, and simple sentiment analysis.",
+    "description_for_human": "Toolkit for basic text processing and analysis.",
+    "tools": [
+        {
+            "name": "CountWords",
+            "summary": "Counts the number of words in a given text.",
+            "parameters": [
+                {
+                    "name": "text",
+                    "type": "string",
+                    "description": "The input text to count words from.",
+                    "required": true
+                }
+            ],
+            "returns": [
+                {
+                    "name": "word_count",
+                    "type": "number",
+                    "description": "The total number of words in the text."
+                }
+            ]
+        },
+        {
+            "name": "CountCharacters",
+            "summary": "Counts the number of characters in a given text.",
+            "parameters": [
+                {
+                    "name": "text",
+                    "type": "string",
+                    "description": "The input text to count characters from.",
+                    "required": true
+                }
+            ],
+            "returns": [
+                {
+                    "name": "character_count",
+                    "type": "number",
+                    "description": "The total number of characters in the text."
+                }
+            ]
+        }
+    ]
+},
+
+{
+    "toolkit": "CurrencyConverter",
+    "category": "Finance and Utility Tools",
+    "name_for_model": "CurrencyConverter",
+    "name_for_human": "Currency Converter",
+    "description_for_model": "A toolkit for converting between different currencies based on real-time exchange rates.",
+    "description_for_human": "Toolkit for converting values between different currencies.",
+    "tools": [
+        {
+            "name": "ConvertCurrency",
+            "summary": "Converts a value from one currency to another using real-time exchange rates.",
+            "parameters": [
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "description": "The amount of money to convert.",
+                    "required": true
+                },
+                {
+                    "name": "from_currency",
+                    "type": "string",
+                    "description": "The currency code to convert from (e.g., USD, EUR, JPY).",
+                    "required": true
+                },
+                {
+                    "name": "to_currency",
+                    "type": "string",
+                    "description": "The currency code to convert to (e.g., USD, EUR, JPY).",
+                    "required": true
+                }
+            ],
+            "returns": [
+                {
+                    "name": "converted_amount",
+                    "type": "number",
+                    "description": "The amount converted into the specified currency."
+                }
+            ],
+            "exceptions": [
+                {
+                    "name": "InvalidCurrencyException",
+                    "description": "The specified currency code is not supported or invalid."
+                },
+                {
+                    "name": "ConversionRateUnavailableException",
+                    "description": "The conversion rate is unavailable at the moment."
+                }
+            ]
+        }
+    ]
+},
+{
+    "toolkit": "TimerToolkit",
+    "category": "Utility and Time Management Tools",
+    "name_for_model": "TimerToolkit",
+    "name_for_human": "Timer",
+    "description_for_model": "A toolkit for setting countdown timers and receiving notifications when the time has passed.",
+    "description_for_human": "Toolkit for setting countdown timers with notifications.",
+    "tools": [
+        {
+            "name": "SetTimer",
+            "summary": "Sets a countdown timer for a specified amount of time and returns a notification when the time has passed.",
+            "parameters": [
+                {
+                    "name": "duration",
+                    "type": "number",
+                    "description": "The length of time for the timer in seconds.",
+                    "required": true
+                }
+            ],
+            "returns": [
+                {
+                    "name": "message",
+                    "type": "string",
+                    "description": "Confirmation message that the timer has started, followed by a notification when the timer ends."
+                }
+            ],
+            "exceptions": [
+                {
+                    "name": "InvalidDurationException",
+                    "description": "The specified duration is not valid (e.g., negative value)."
+                }
+            ]
+        }
+    ]
+},    
+{
+    "toolkit": "WeatherToolkit",
+    "category": "Environment and Utility Tools",
+    "name_for_model": "WeatherToolkit",
+    "name_for_human": "Weather Forecaster",
+    "description_for_model": "A toolkit for retrieving current weather information, forecasts, and alerts for a specified location.",
+    "description_for_human": "Toolkit for getting real-time weather updates and forecasts.",
+    "tools": [
+        {
+            "name": "GetCurrentWeather",
+            "summary": "Retrieves the current weather conditions for a specified location.",
+            "parameters": [
+                {
+                    "name": "location",
+                    "type": "string",
+                    "description": "The name of the city or location to retrieve weather information for.",
+                    "required": true
+                }
+            ],
+            "returns": [
+                {
+                    "name": "temperature",
+                    "type": "number",
+                    "description": "The current temperature in Celsius or Fahrenheit."
+                },
+                {
+                    "name": "conditions",
+                    "type": "string",
+                    "description": "A brief description of the current weather conditions (e.g., sunny, cloudy, rainy)."
+                }
+            ],
+            "exceptions": [
+                {
+                    "name": "InvalidLocationException",
+                    "description": "The specified location is not valid or cannot be found."
+                }
+            ]
+        },
+        {
+            "name": "GetWeatherForecast",
+            "summary": "Retrieves the weather forecast for a specified location for the next few days.",
+            "parameters": [
+                {
+                    "name": "location",
+                    "type": "string",
+                    "description": "The name of the city or location to retrieve the forecast for.",
+                    "required": true
+                },
+                {
+                    "name": "days",
+                    "type": "number",
+                    "description": "The number of days to retrieve the weather forecast for (e.g., 3, 5, 7).",
+                    "required": false
+                }
+            ],
+            "returns": [
+                {
+                    "name": "forecast",
+                    "type": "array",
+                    "description": "An array of weather predictions, each containing temperature, conditions, and other relevant data."
+                }
+            ],
+            "exceptions": [
+                {
+                    "name": "InvalidLocationException",
+                    "description": "The specified location is not valid or cannot be found."
+                }
+            ]
+        }
+    ]
+},
+{
+    "toolkit": "WorldClockToolkit",
+    "category": "Utility and Time Management Tools",
+    "name_for_model": "WorldClockToolkit",
+    "name_for_human": "World Clock",
+    "description_for_model": "A toolkit for retrieving the current time in various cities and time zones around the world.",
+    "description_for_human": "Toolkit for checking the current time in different cities and time zones globally.",
+    "tools": [
+        {
+            "name": "GetCurrentTime",
+            "summary": "Retrieves the current time for a specific city or time zone.",
+            "parameters": [
+                {
+                    "name": "location",
+                    "type": "string",
+                    "description": "The name of the city or time zone (e.g., 'New York', 'UTC+5').",
+                    "required": true
+                }
+            ],
+            "returns": [
+                {
+                    "name": "current_time",
+                    "type": "string",
+                    "description": "The current time in the specified location, in 'HH:mm:ss' format."
+                },
+                {
+                    "name": "timezone",
+                    "type": "string",
+                    "description": "The time zone for the specified location."
+                }
+            ],
+            "exceptions": [
+                {
+                    "name": "InvalidLocationException",
+                    "description": "The specified city or time zone is invalid or not recognized."
+                }
+            ]
+        },
+        {
+            "name": "GetTimeDifference",
+            "summary": "Calculates the time difference between two time zones or cities.",
+            "parameters": [
+                {
+                    "name": "location1",
+                    "type": "string",
+                    "description": "The first city or time zone.",
+                    "required": true
+                },
+                {
+                    "name": "location2",
+                    "type": "string",
+                    "description": "The second city or time zone.",
+                    "required": true
+                }
+            ],
+            "returns": [
+                {
+                    "name": "time_difference",
+                    "type": "number",
+                    "description": "The difference in hours between the two specified locations."
+                }
+            ],
+            "exceptions": [
+                {
+                    "name": "InvalidLocationException",
+                    "description": "One or both of the specified locations are invalid or unrecognized."
+                }
+            ]
+        }
+    ]
+}]

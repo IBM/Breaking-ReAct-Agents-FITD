@@ -1,0 +1,12 @@
+# Python 3.9.19
+openai
+anthropic
+transformers
+torch
+python-dotenv
+ibm-generative-ai
+nltk
+pandas
+openpyxl
+datasets
+seaborn
