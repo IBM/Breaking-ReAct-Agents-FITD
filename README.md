@@ -55,10 +55,23 @@ Additional parameters, experiment configurations, and settings for running addut
 ### Citation
 
 ```bibtex
-@article{nakash2024breaking,
-  title={Breaking ReAct Agents: Foot-in-the-Door Attack Will Get You In},
-  author={Nakash, Itay and Kour, George and Uziel, Guy and Anaby-Tavor, Ateret},
-  journal={arXiv preprint arXiv:2410.16950},
-  year={2024}
+@inproceedings{nakash-etal-2025-breaking,
+    title = "Breaking {R}e{A}ct Agents: Foot-in-the-Door Attack Will Get You In",
+    author = "Nakash, Itay  and
+      Kour, George  and
+      Uziel, Guy  and
+      Anaby Tavor, Ateret",
+    editor = "Chiruzzo, Luis  and
+      Ritter, Alan  and
+      Wang, Lu",
+    booktitle = "Findings of the Association for Computational Linguistics: NAACL 2025",
+    month = apr,
+    year = "2025",
+    address = "Albuquerque, New Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-naacl.363/",
+    pages = "6484--6509",
+    ISBN = "979-8-89176-195-7",
+    abstract = "Following the advancement of large language models (LLMs), the development of LLM-based autonomous agents has become prevalent.As a result, the need to understand the security vulnerabilities of these agents has become a critical task. We examine how ReAct agents can be exploited using a straightforward yet effective method we refer to as the foot-in-the-door attack.Our experiments show that indirect prompt injection attacks, prompted by harmless and unrelated requests (such as basic calculations) can significantly increase the likelihood of the agent performing subsequent malicious actions.Our results show that once a ReAct agent`s thought includes a specific tool or action, the likelihood of executing this tool in the subsequent steps increases significantly, as the agent seldom re-evaluates its actions. Consequently, even random, harmless requests can establish a {\textquoteleft}foot-in-the-door', allowing an attacker to embed malicious instructions into the agent`s thought process, making it more susceptible to harmful directives.To mitigate this vulnerability, we propose implementing a simple reflection mechanism that prompts the agent to reassess the safety of its actions during execution, which can help reduce the success of such attacks."
 }
 
